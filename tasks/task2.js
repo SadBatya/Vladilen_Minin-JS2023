@@ -5,8 +5,8 @@ function func(num, min, max) {
     return max ** 2;
   } else if (num < max - (max - min) / 2) {
     return num ** 2;
-  }else{
-    return Math.floor(num)
+  } else {
+    return Math.floor(num);
   }
 }
 
