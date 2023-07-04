@@ -1,24 +1,22 @@
-const sentence = 'Hello, how are you?';
-const str2 = 'dasd sad as dsa das d fa sf as fas d sa das sa f sa';
-
-function countWords(str) {
-  let arr = [];
-  let count = 1;
-  for (let symbol of str) {
-    arr.push(symbol);
+function findMaxValue(arr){
+  let newArr = [...arr]
+  if(newArr.length === 0){
+    return 0
+  }else{
+    return Math.max(...arr)
   }
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === ' ') {
-      count++;
-    }
-  }
-
-  return count;
 }
 
-console.log(countWords(sentence)); // 4
-console.log(countWords(str2)); // 16
 
-// в моем варианте есть небольшой недостаток, 
-// если между словами будет двойной пробел случайно, 
-// то мой счетчик будет неправильно считать
+const numbers1 = [1, 2, 3, 4, 5];
+const max1 = findMaxValue(numbers1);
+console.log(max1); // 5
+
+const numbers2 = [10, 20, 5, 30, 15];
+const max2 = findMaxValue(numbers2);
+console.log(max2); // 30
+
+const emptyArray = [];
+const maxEmpty = findMaxValue(emptyArray);
+console.log(maxEmpty); // undefined
+

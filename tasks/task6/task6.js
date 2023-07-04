@@ -1,10 +1,21 @@
-const result1 = sumNumbers(1, 2, 3, 4, 5);
-const result2 = sumNumbers(10, 20, 30);
+function createCounter(value) {
+  let newNum = value
+  function inc(newNum){
+    newNum++
+  }
+  function dec(newNum){
+    newNum--
+  }
+  function get(newNum){
+    newNum
+  }
+  return newNum
+}
 
-
-
-
-
-
-console.log(result1); // 15
-console.log(result2); // 60
+const { inc, dec, get } = createCounter(5);
+// console.log(get()); // 5
+inc();
+inc();
+inc();
+dec();
+// console.log(get()); // 7

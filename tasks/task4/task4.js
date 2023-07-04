@@ -1,10 +1,11 @@
-const generateGoogleString = (times = 0) => `G${'o'.repeat(Math.max(2, times))}gle`
+function isPalindrome(str){
+  if(str === str.split('').reverse().join('')){
+    return true
+  }else{
+    return false
+  }
+}
 
-console.log(generateGoogleString(4));
-// Goooogle
-
-console.log(generateGoogleString(0));
-// Google
-
-console.log(generateGoogleString(-2));
-// Google
+console.log(isPalindrome('level')); // true
+console.log(isPalindrome('radar')); // true
+console.log(isPalindrome('hello')); // false
