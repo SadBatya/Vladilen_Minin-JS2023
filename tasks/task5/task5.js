@@ -7,3 +7,5 @@ const countVowels = (str) => {
           count++;
       }
   }
+}
+
