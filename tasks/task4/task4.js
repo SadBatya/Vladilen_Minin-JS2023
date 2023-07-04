@@ -1,12 +1,4 @@
-
-
-function generateGoogleString(number){
-  let word = 'Google'
-  for(let symbol of word){
-    return symbol
-  }
-}
-
+const generateGoogleString = (times = 0) => `G${'o'.repeat(Math.max(2, times))}gle`
 
 console.log(generateGoogleString(4));
 // Goooogle
@@ -16,5 +8,3 @@ console.log(generateGoogleString(0));
 
 console.log(generateGoogleString(-2));
 // Google
-
-generateGoogleString
