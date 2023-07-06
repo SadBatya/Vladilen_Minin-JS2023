@@ -1,4 +1,7 @@
-function getLastDayOfMonth()
+function getLastDayOfMonth(year, month) {
+  let date = new Date(year, month + 1, 0);
+  return date.getDate();
+}
 
 // июнь 2027
 console.log(getLastDayOfMonth(2027, 5)); // 30
