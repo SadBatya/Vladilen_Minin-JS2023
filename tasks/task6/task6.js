@@ -1,15 +1,10 @@
-function createCounter(value) {
-  const inc = () => value++;
-  const dec = () => value--;
-  const get = () => value;
+function getLastDayOfMonth()
 
-  return { inc, dec, get };
-}
+// июнь 2027
+console.log(getLastDayOfMonth(2027, 5)); // 30
 
-const { inc, dec, get } = createCounter(5);
-console.log(get()); // 5
-inc();
-inc();
-inc();
-dec();
-console.log(get()); // 7
+// февраль 2027
+console.log(getLastDayOfMonth(2027, 1)); // 28
+
+// январь 2027
+console.log(getLastDayOfMonth(2027, 0)); // 31

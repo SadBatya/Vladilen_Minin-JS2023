@@ -1,17 +1,17 @@
-function calculateAverage(arr){
-  if(arr.length === 0){
-    return 0
-  }else{
-    return arr[(arr.length - 1)/2]
-  }
+const targetDate = new Date('2027-12-31T23:59:59');
+// const timeUntilTargetDate = getTimeUntilDate(targetDate);
+
+
+function getTimeUntilDate(date){
+  let newDate = targetDate - Date.now()
+  let difDate = new Date(newDate)
+  let hours = difDate.getHours()
+  let days = difDate.getDay()
+  let minutes = difDate.getMinutes()
+  let seconds = difDate.getSeconds()
+
+  return console.log(`days: ${days}, hours: ${hours}, minutes:${minutes}, seconds:${seconds}`)
 }
 
+getTimeUntilDate() // { days: 100, hours: 20, minutes: 45, seconds: 31 }
 
-const numbers1 = [1, 2, 3, 4, 5];
-console.log(calculateAverage(numbers1)); // 3
-
-const numbers2 = [10, 20, 30, 40, 50];
-console.log(calculateAverage(numbers2)); // 30
-
-const emptyArray = [];
-console.log(calculateAverage(emptyArray)); // 0
