@@ -1,6 +1,12 @@
-function calculateAge(birtDate){
-  return console.log(Math.round((Date.now() - birtDate)/86400000/365))
+class Circle{
+  constructor(radius){
+    this.radius = radius
+  }
+
+  getArea(){
+    return Math.round(Math.PI * this.radius ** 2)
+  }
 }
 
-const birthDate = new Date('1990-05-20');
-const age = calculateAge(birthDate);
+const circle = new Circle(5)
+console.log(circle.getArea())

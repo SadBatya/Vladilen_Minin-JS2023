@@ -1,13 +1,17 @@
-function getLastDayOfMonth(year, month) {
-  let date = new Date(year, month + 1, 0);
-  return date.getDate();
+const boxFactory = {
+	type: 'box',
+	count: 0,
+	produce() {
+		this.count++;
+		return 'Box №' + this.count;
+	}
 }
 
-// июнь 2027
-console.log(getLastDayOfMonth(2027, 5)); // 30
+const produceBox = (produceFn) => {
+	const boxName = produceFn();
+	console.log(boxName);
+}
 
-// февраль 2027
-console.log(getLastDayOfMonth(2027, 1)); // 28
-
-// январь 2027
-console.log(getLastDayOfMonth(2027, 0)); // 31
+for(let i = 0; i < 25; i++) {
+	produceBox(boxFactory.produce.bind(boxFactory));
+}

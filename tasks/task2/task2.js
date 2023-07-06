@@ -1,10 +1,14 @@
-const date1 = new Date('2027-06-01');
-const date2 = new Date('2027-06-10');
-const difference = getDateDifference(date1, date2);
-console.log(difference); // 9
+class Product{
+  constructor(name, price){
+    this.name = name
+    this.price = price
+  }
 
-function getDateDifference(date1, date2){
- const date = new Date(date2 - date1)
- return date.getDay()
+  priceWithDiscount(proc){
+    return this.price - (this.price * proc/100)
+  }
 }
 
+const product = new Product("Phone", 1000);
+console.log(product.priceWithDiscount(10)); // 900
+console.log(product.priceWithDiscount(20)); // 800

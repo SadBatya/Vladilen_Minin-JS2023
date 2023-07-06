@@ -1,15 +1,30 @@
-const date1 = new Date('2027-07-10');  // Суббота
-const date2 = new Date('2027-07-12');  // Понедельник
+class Animal {
+  constructor(name, favoriteFood) {
+    this.name = name;
+    this.favoriteFood = favoriteFood;
+  }
 
-function isWeekend(date){
-  let day = new Date(date).getDay()
-  if(day < 5){
-    return false
-  }else{
-    return true
+  makeSound() {
+    console.log("Animal sound");
+  }
+
+  sayName() {
+    console.log(`My name is ${this.name}`);
+  }
+
+  sayInfo() {
+    console.log(`${this.name}'s favorite food is ${this.favoriteFood}`);
   }
 }
 
+class Cat extends Animal {
+  makeSound() {
+    console.log("Meow");
+  }
+}
 
-console.log(isWeekend(date1));  // true
-console.log(isWeekend(date2));  // false
+class Dog extends Animal {
+  makeSound() {
+    console.log("Gav!");
+  }
+}
