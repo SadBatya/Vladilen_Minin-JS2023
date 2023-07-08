@@ -1,17 +1,14 @@
-class Person{
-  arr = []
-
-  addFriend(name){
-    this.arr.push(name)
-  }
-
-  showFriends(){
-    console.log(this.arr)
-  }
+function sumWithDelay(delay, a, b) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(a + b);
+    }, delay);
+  });
 }
 
-const person = new Person();
-person.addFriend("Иван");
-person.addFriend("Сергей");
-person.addFriend("Игорь");
-person.showFriends(); // Иван, Сергей, Игорь
+async function start() {
+  const result = await sumWithDelay(1000, 5, 5);
+  console.log(result);
+}
+
+start();

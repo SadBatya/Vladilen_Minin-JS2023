@@ -1,14 +1,14 @@
-class Product{
-  constructor(name, price){
-    this.name = name
-    this.price = price
-  }
+const url = 'https://jsonplaceholder.typicode.com/todos';
 
-  priceWithDiscount(proc){
-    return this.price - (this.price * proc/100)
-  }
-}
-
-const product = new Product("Phone", 1000);
-console.log(product.priceWithDiscount(10)); // 900
-console.log(product.priceWithDiscount(20)); // 800
+fetch(url)
+  .then(response => response.json())
+  .then(tasks => {
+    const ul = document.createElement('ul');
+    tasks.forEach(task => {
+      const li = document.createElement('li');
+      li.textContent = task.title;
+      ul.appendChild(li);
+    });
+    document.body.appendChild(ul);
+  })
+  .catch(error => console.error(error));

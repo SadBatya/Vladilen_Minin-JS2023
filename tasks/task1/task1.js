@@ -1,12 +1,13 @@
-class Circle{
-  constructor(radius){
-    this.radius = radius
-  }
+console.log('a');
+new Promise((resolve, reject) => {
+	console.log('b');
+	setTimeout(() => {
+		console.log('c');
+		resolve();
+	}, 0);
+})
+  .then(() => console.log('d'));
 
-  getArea(){
-    return Math.round(Math.PI * this.radius ** 2)
-  }
-}
-
-const circle = new Circle(5)
-console.log(circle.getArea())
+console.log('e');
+setTimeout(() => console.log('f'), 0);
+console.log('g');
